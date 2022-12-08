@@ -1,2 +1,10 @@
-v-bind === : 
-v-on   === @
+단방향 바인딩 : v-bind === : 
+이벤트        : v-on   === @
+양방향 바인딩 : v-model
+
+computed : 반응형 getter
+  -> methods에서 동일하게 사용할 수 있지만 computed은 캐싱을 하고 methods는 호출할 때 실행함
+  -> 많이 사용하는 곳은 computed를 사용하는게 좋음
+
+watch : 반응형 콜백
+  -> 대부분의 경우 computed 속성이 더 적합하지만 사용자가 만든 감시자가 필요한 경우 사용

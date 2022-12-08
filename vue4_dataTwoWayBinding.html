@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" :value="cont" @keyup="updateContent"><br>
+        {{ cont }}<br>
+        <hr>
+        <!-- 양방향 바인딩 : v-model -->
+        <input type="text" v-model="cont2"><br>
+        {{ cont2 }}
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                cont: 'text',
+                cont2: 'text2'
+            },
+            methods: {
+                updateContent(event) {
+                    console.log(event);
+                    this.cont = event.target.value;
+                }
+            }
+        }) 
+    </script>
+</body>
+</html>

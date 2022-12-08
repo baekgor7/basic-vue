@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">        
+        <input type="button" @click="changeMessage" value="Click"><br>
+        {{ message }}<br>
+        <hr>
+        {{ updated }}
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: '안녕하세요',
+                updated: 'NO'    
+            },
+            methods: {
+                changeMessage() {
+                    this.message = '코지코더';
+                }
+            },
+            watch: {
+                message(newVal, oldVal) {   // data에 message를 지켜보다가 변경되면 안에 내용 실행
+                    console.log(newVal, oldVal);
+                    this.updated = 'YES';
+                }
+            }
+        }) 
+    </script>
+</body>
+</html>
